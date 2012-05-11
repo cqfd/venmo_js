@@ -1,0 +1,62 @@
+* Plan
+
+I'm going to talk about three of javascript's "good parts": objects,
+functions, and prototypal inheritence.
+
+Somewhat amazingly, these guys are relatively easy to understand and
+get you about 90% of the way towards understanding javascript. The
+remaining 10% is mainly the "bad parts"; I'll talk about bits and
+pieces of the bad stuff today, but that's not the focus of the talk.
+
+This is a "learn through your fingertips, not your ears" kind of
+talk :)
+
+* Objects
+
+Objects = Python dictionaries, Ruby hashes. They are buckets that map
+strings (keys) to values.
+
+Remember that just about everything (everything?) in javascript is
+secretly an object--even things like numbers and arrays!
+
+* Functions
+** Functions are first class values
+
+You can store them in variables and data structures (arrays, other
+objects). You can even pass them as arguments to other functions!
+
+** Functions are lexically scoped
+*** Closures
+
+First-class functions that have lexical scope can do some pretty
+amazing things!
+
+Functions retain their lexical bindings even if you execute them in an
+entirely different scope. It's a bit hard to immediately appreciate
+why this would be so powerful, but it's extremely powerful.
+
+** Functions create their own scopes
+** Functions have dynamic context
+*** Calling functions with receivers
+*** Using call and apply
+* Prototypal inheritance
+** Every object has a prototype property
+** Property lookup
+
+What actually happens when you write obj.foo in javascript? In Ruby?
+Python?
+
+Recall that objects in javascript are bags of key-value pairs.
+Property lookup first looks directly into the object's bag--these
+properties are known as "own" properties.
+
+If obj doesn't have an own property with key 'foo', then property
+lookup recurses into a special property called __proto__. Lookup is
+recursive because if obj.__proto__ doesn't have a property called
+'foo', then you have to look in obj.__proto__'s __proto__ property for
+a 'foo'.
+
+The recursion eventually bottoms out when some link in the chain has
+__proto__ pointing to null.
+
+** Constructor functions
