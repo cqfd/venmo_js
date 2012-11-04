@@ -69,7 +69,7 @@ describe("functions are the *only* way to create scope", function() {
         var i = "super important message!";
         for (var i = 0; i < 6; i++) {
             "do nothing";
-        };
+        }
         expect(i).toBe(undefined);
     });
 
@@ -100,8 +100,8 @@ describe("functions are the *only* way to create scope", function() {
             for (var x = 0; x < 36; x++) {
                 "talk amongst yourselves";
             }
+            // TODO: and another line here to make the test pass
         }());
-        // TODO: and another line here to make the test pass
     });
 
 });
