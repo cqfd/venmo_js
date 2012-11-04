@@ -22,8 +22,8 @@ describe("property lookup", function() {
   it("property lookup starts with own properties", function() {
     var iqram = { name: 'iqram' };
     iqram.__proto__.name = 'poop';
-    expect(obj.hasOwnProperty('name')).toBe(undefined);
-    expect(obj.name).toBe(undefined);
+    expect(iqram.hasOwnProperty('name')).toBe(undefined);
+    expect(iqram.name).toBe(undefined);
   });
 
   it("property lookup then moves to the object's __proto__", function() {
